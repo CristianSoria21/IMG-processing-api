@@ -1,0 +1,15 @@
+# Node
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# Env (secretos)
+.env
+
+# Uploads locales
+uploads/*
+
+# Mac
+.DS_Store

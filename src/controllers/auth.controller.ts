@@ -78,7 +78,7 @@ export async function login(req: Request, res: Response) {
 		return res.status(200).json({
 			ok: true,
 			token,
-			user: { id: user.id, email: user.email },
+			user: { id: user.id, email: user.email, name: user.name },
 			message: "Inicio de sesión exitoso",
 		});
 	} catch (e) {

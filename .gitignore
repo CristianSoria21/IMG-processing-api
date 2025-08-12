@@ -8,8 +8,12 @@ dist/
 # Env (secretos)
 .env
 
+
 # Uploads locales
 uploads/*
+
+# Prisma generated client
+generated/
 
 # Mac
 .DS_Store

@@ -86,12 +86,3 @@ export async function login(req: Request, res: Response) {
 		return res.status(500).json({ error: "Error al iniciar sesión" });
 	}
 }
-
-/**
- * POST /auth/logout
- * Token-in-header flow: server doesn't store sessions.
- * Client must discard its token; endpoint returns 200 for convenience.
- */
-export function logout(_req: Request, res: Response) {
-	return res.status(200).json({ ok: true, message: "Sesión cerrada" });
-}

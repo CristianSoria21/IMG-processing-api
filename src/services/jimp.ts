@@ -75,7 +75,7 @@ export function processImage<T extends JimpLike>(
 				image.greyscale();
 				break;
 			case "RESIZE":
-				image.resize({ w: step.width, h: step.height }); // ✅ firma posicional
+				image.resize({ w: step.width, h: step.height });
 				break;
 			case "ROTATE":
 				image.rotate(step.deg);

@@ -28,11 +28,11 @@ function ensureUploadDirs() {
 
 ensureUploadDirs();
 
-// Rutas
+// Rutes
 app.use("/auth", authRoutes);
 app.use("/images", imagesRoutes);
 
-// Servir imágenes estáticas
+// image static
 app.use("/static", express.static(env.UPLOAD_DIR));
 
 export default app;

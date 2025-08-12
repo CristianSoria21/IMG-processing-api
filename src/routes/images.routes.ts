@@ -4,7 +4,12 @@ import path from "path";
 import crypto from "crypto";
 import { env } from "../config/env";
 import { requireAuth } from "../middlewares/auth.middleware";
-import { processAndSave, listMyImages } from "../controllers/images.controller";
+import {
+	processAndSave,
+	listMyImages,
+	updateImage,
+	deleteImage,
+} from "../controllers/images.controller";
 
 const router = Router();
 
@@ -26,7 +31,7 @@ const upload = multer({
 			file.mimetype
 		);
 		if (!ok) {
-			const err = new Error("Unsupported media type");
+			const err = new Error("Tipo de archivo no soportado");
 			return cb(err as any, false);
 		}
 		return cb(null, true);
@@ -35,5 +40,7 @@ const upload = multer({
 
 router.post("/process", requireAuth, upload.single("image"), processAndSave);
 router.get("/", requireAuth, listMyImages);
+router.put("/:id", requireAuth, updateImage);
+router.delete("/:id", requireAuth, deleteImage);
 
 export default router;
